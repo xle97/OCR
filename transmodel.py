@@ -14,7 +14,7 @@ from timm import create_model
 from nets.cnn_ctc import CNN
 import torch.nn as nn
 
-pretrain_path = './checkpoint/ckpoint2/cnn_156000_loss0.162173.pth'
+pretrain_path = '/home/rzhang/Documents/project/ocr/checkpoint/ckpoint3/cnn_73500_loss0.196247.pth'
 class ModelHUb:
     def __init__(self, opt, model, num_class=1000):
         self.model_name = opt.model_name
@@ -47,8 +47,8 @@ class ModelHUb:
 
 
 parse = argparse.ArgumentParser(description="MAKE MODELS CLS FOR VACC")
-parse.add_argument("--model_library", type=str, default="timm", choices=["timm", "torchvision"])
-parse.add_argument("--model_name", type=str, default="resnet18_ocr2")
+parse.add_argument("--model_library", type=str, default="torchvision", choices=["timm", "torchvision"])
+parse.add_argument("--model_name", type=str, default="resnet18_ocr")
 parse.add_argument("--save_dir", type=str, default="./work_dir")
 # parse.add_argument("--size", type=int, default=224)  #输入大小   已经resize到224了
 parse.add_argument(
